@@ -16,9 +16,12 @@
 
             pingTimer = setInterval(sendPing, 30 * 1000, ws);
 
+            // Do not want a warning message about zoom
+            hterm.zoomWarningMessage = '';
+            
             hterm.defaultStorage = new lib.Storage.Local();
             hterm.defaultStorage.clear();
-
+            
             term = new hterm.Terminal();
 
             term.getPrefs().set("send-encoding", "raw");
